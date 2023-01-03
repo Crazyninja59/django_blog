@@ -1,0 +1,37 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="post-main">
+    <p class="author_p">Автор: {{post.author}}</p>
+    <h2 class="post-title">{{post.title}}</h2>
+    <p class="post-content">{{post.content}}</p>
+    {% if user.is_authenticated %}
+    <form method="POST" action="{% url 'like_post' post.pk %}">
+       {% csrf_token %}
+        <button type="submit"><img src="{% static 'blogapp/img/like.svg' %}" alt="" width="20", height="20"> {{likes}}</button>
+    </form>
+    {% else %}
+        <div >Лайков: {{likes}} </div>
+    {% endif %}
+    <h3 class="comm">Комментарии</h3>
+    {% for comment in comments %}
+    <div class="comment">
+        <p class="comment-author">{{comment.author.username}}</p>
+        <p class="comment-text">{{comment.text}}</p>
+    </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    <h3>Оставить комментарий</h3>
+    <form method="POST" action="{% url 'add_comment' post.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
+    {% endif %}
+    {% endblock %}
+</div>
+
+
+
+
+

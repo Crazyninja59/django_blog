@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #E6E6E6;
+}
+main{
+    margin: 0 auto;
+    width: 820px;
+}
+.head-list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.reg_auth{
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.logo{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+h1{
+    color: #757575;
+    font-size: 25px;
+}
+.blog-list{
+    display: grid;
+    list-style: none;
+    gap: 20px;
+
+}
+.blog-item{
+    width: 780px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 250px 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    grid-template-areas:
+    "A B"
+    "A C"
+}
+h2{
+    font-size: 18px;
+}
+p{
+    font-size: 16px;
+
+}
+.description{
+    grid-area: B;
+    margin-bottom: 47px;
+    width: 500px;
+    height: 72px;
+}
+button{
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+img{
+    grid-area: A;
+}
+form{
+    width: 150px;
+    height: 35px;
+    grid-area: C;
+
+}
+.head{
+    padding: 20px 20px 20px 20px;
+    width: 780px;
+    background-color: white;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.make_post{
+    font-size: 20px;
+
+}
+.form{
+    width: 500px;
+    height: 550px;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+}
+.form-content{
+    padding: 20px;
+}
+.field{
+    margin-left: 20px;
+}
+.load{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.category-list{
+    width: 250px;
+    height: auto;
+    background-color: white;
+    list-style: none;
+    margin-left: 50px;
+    display: grid;
+    gap: 5px;
+    position: absolute;
+    top: 220px;
+    right: 250px;
+    border-radius: 5px;
+
+}
+.category-list li{
+    border: 2px solid grey;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.category-list a{
+    height: 30px;
+}
+.regform{
+    background: white;
+    width: 400px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+    text-align: center;
+    border-radius: 5px;
+}
+.labelreg{
+    margin-left: auto;
+    margin-right: auto;
+}
+.pas2{
+    margin-bottom: 20px;
+}
+#id_password{
+    margin-bottom: 20px;
+}
+.post-main{
+    margin: 0 auto;
+    width: 800px;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+}
+.author_p{
+    margin-bottom: 20px;
+}
+.post-content{
+    margin-bottom: 20px;
+}
+.post-title{
+    margin-bottom: 10px;
+}
+.comment{
+    padding: 15px 15px 15px 15px;
+}
+.comment-author{
+    margin-bottom: 10px;
+}
+.like{
+    margin-bottom: 20px;
+}
+.comm{
+    margin-top: 20px;
+}
+.comm-text-form{
+    width: 600px;
+    height: 20px;
+    margin-bottom: 5px;
+}

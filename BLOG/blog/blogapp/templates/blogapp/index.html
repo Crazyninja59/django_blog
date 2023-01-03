@@ -1,0 +1,37 @@
+{% extends 'blogapp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main>
+        <div class="head">
+            <h1>Блог</h1>
+            <a href="{% url 'add_post' %}"><button>Создать пост</button></a>
+        </div>
+        <div class="main-box">
+            <ul class="blog-list">
+                {% for post in posts %}
+                    {% if post.is_published == True %}
+                        <li class="blog-item">
+                            <img src="{{ post.image.url }}" width="250" height="150">
+                            <div class="description">
+                                <h2 class="title">{{post.title}}</h2>
+                                <p>{{ post.content|slice:":200" }}</p>
+                            </div>
+                            <form action="{% url 'post_detail' post.id %}">
+                                <button>Читать далее</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <!-- continue -->
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul class="category-list">
+                <li><a href="{% url 'home' %}">Все категории</a></li>
+                {% for c in categories %}
+                <li><a href="{% url 'category_view' c.slug %}">{{c.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+{% endblock content %}

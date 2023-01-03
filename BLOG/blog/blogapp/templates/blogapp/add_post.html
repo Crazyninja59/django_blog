@@ -1,0 +1,17 @@
+{% extends 'blogapp/base.html' %}
+{% block content %}
+
+<form method="POST" action="{% url 'add_post' %}" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
+    <div class="field">
+        {% for field in form %}
+        <div>
+            {{field.label_tag}}
+            <div>{{field}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <button type="submit" class="load">Загрузить</button>
+</form>
+
+{% endblock content %}
